@@ -1,0 +1,74 @@
+
+// модуль 6 задание 1
+
+function getEvenOddOther(){
+let evenNumbers = 0;
+let oddNumbers = 0;
+let otherItems = 0;
+let arr = [0, 1, 2, 3, 4, 5, 6, NaN, null, 'string', undefined];
+for(let i = 0; i < arr.length; i++){
+  if (arr[i] === 0 || (typeof (arr[i]) !== 'number')){
+      otherItems++;
+  }else{
+    if (arr[i] % 2 === 0){
+      evenNumbers++;
+  }else{
+      oddNumbers++;
+      }
+   }
+}
+console.log('четных чисел - ' + evenNumbers);
+console.log('нечетных чисел - ' + oddNumbers);
+console.log('других значений - ' + otherItems);
+}
+getEvenOddOther()
+
+// задание 2
+
+function getNumber(num){
+    if ((num > 1000) || (num < 2)) {
+        return console.log('Данные неверны');
+    }  else {
+        for (let i = 2; i < num; i++){
+            if (num % i === 0) {
+                return console.log('Простое число');
+            } else {
+                return console.log('Составное число');
+            }
+        }
+    }
+}
+getNumber(+prompt('введите число'));
+
+// задание 3
+
+function getSum(number1){
+  return function(number2){
+    return number1+number2
+  }
+  
+}
+const result = getSum(12)(23)
+console.log(result)
+
+// задание 4
+
+function numbers(a, b){
+    const intervalId = setInterval(function(){
+    console.log(a);
+    if(a === b){
+      clearInterval(intervalId);
+    }else{
+      a++;
+    }
+  }, 1000)
+}
+numbers(5, 15)
+
+// задание 5
+
+let func = (x, n) => {
+  let result = Math.pow(x, n);
+  console.log(result)
+}
+func(2, 3)
